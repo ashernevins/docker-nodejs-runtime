@@ -1,5 +1,7 @@
 FROM google/nodejs
 
+RUN apt-get install libfreetype6 libfontconfig
+
 WORKDIR /app
 ONBUILD ADD . /app
 ONBUILD RUN npm install -g bower
