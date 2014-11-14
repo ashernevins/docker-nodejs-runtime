@@ -1,6 +1,6 @@
 FROM google/nodejs
 
-RUN apt-get install libfreetype6 libfontconfig
+RUN apt-get install -y -q libfreetype6 libfontconfig
 
 WORKDIR /app
 ONBUILD ADD . /app
