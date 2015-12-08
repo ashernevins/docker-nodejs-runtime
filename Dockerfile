@@ -1,6 +1,7 @@
-FROM google/nodejs
+FROM node:0.12.9
 
-RUN apt-get install -y -q libfreetype6 libfontconfig
+RUN mkdir -p /app
+WORKDIR /app
 
 WORKDIR /app
 ONBUILD ADD . /app
@@ -8,5 +9,4 @@ ONBUILD RUN npm install -g bower
 ONBUILD RUN npm install
 ONBUILD RUN bower install --allow-root --config-interactive=false
 
-CMD []
-ENTRYPOINT ["/nodejs/bin/npm", "start"]
+CMD [ "npm", "start" ]
