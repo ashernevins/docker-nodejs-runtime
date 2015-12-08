@@ -2,8 +2,6 @@ FROM node:0.12.9
 
 RUN mkdir -p /app
 WORKDIR /app
-
-WORKDIR /app
 ONBUILD ADD . /app
 ONBUILD RUN npm install -g bower
 ONBUILD RUN npm install
